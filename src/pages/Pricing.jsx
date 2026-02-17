@@ -227,90 +227,90 @@ const Pricing = () => {
                     <div className="max-w-[1400px] mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-12" style={{ fontFamily: '"SN Pro", sans-serif' }}>Add more power to your workflow</h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div className="flex flex-col gap-6 mb-8">
                             {/* Inbound Add-on */}
-                            <div id="inbound-addon" className="bg-white border border-gray-200 rounded-[2.5rem] p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
-                                <div className="flex flex-col md:flex-row justify-between items-start mb-12">
-                                    <div>
+                            <div id="inbound-addon" className="bg-white border border-gray-200 rounded-3xl p-6 md:p-12 hover:shadow-xl transition-shadow duration-300">
+                                <div className="flex flex-col md:flex-row justify-between items-start mb-8 md:mb-12">
+                                    <div className="mb-4 md:mb-0">
                                         <div className="uppercase text-purple-600 text-xs font-bold tracking-widest mb-2">ADD-ON</div>
-                                        <h3 className="text-4xl font-serif font-medium text-gray-900">Inbound</h3>
+                                        <h3 className="text-2xl md:text-4xl font-serif font-medium text-gray-900">Inbound</h3>
                                     </div>
-                                    <div className="text-right mt-4 md:mt-0">
-                                        <div className="text-4xl font-medium text-gray-900">$119</div>
+                                    <div className="text-left md:text-right">
+                                        <div className="text-3xl md:text-4xl font-medium text-gray-900">$119</div>
                                         <div className="text-xs text-gray-500 leading-tight">Per team, per month<br />billed annually</div>
                                     </div>
                                 </div>
-                                <div className="space-y-6">
+                                <div className="space-y-4 md:space-y-6">
                                     <div className="flex items-start gap-4">
                                         <svg className="w-5 h-5 text-gray-900 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M5 13l4 4L19 7" /></svg>
                                         <div>
-                                            <div className="font-bold text-gray-900">Website Visitors (Company)</div>
-                                            <div className="text-sm text-gray-500">Identify up to 50,000 companies per month.</div>
+                                            <div className="font-bold text-gray-900 text-sm md:text-base">Website Visitors (Company)</div>
+                                            <div className="text-xs md:text-sm text-gray-500">Identify up to 50,000 companies per month.</div>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">
                                         <svg className="w-5 h-5 text-gray-900 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M5 13l4 4L19 7" /></svg>
                                         <div>
-                                            <div className="font-bold text-gray-900">Form Enrichment</div>
-                                            <div className="text-sm text-gray-500">5,000 form contacts enriched per month (credit usage applies).</div>
+                                            <div className="font-bold text-gray-900 text-sm md:text-base">Form Enrichment</div>
+                                            <div className="text-xs md:text-sm text-gray-500">5,000 form contacts enriched per month.</div>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">
                                         <svg className="w-5 h-5 text-gray-900 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M5 13l4 4L19 7" /></svg>
                                         <div>
-                                            <div className="font-bold text-gray-900">Form Builder</div>
-                                            <div className="text-sm text-gray-500">Capture leads with custom forms.</div>
+                                            <div className="font-bold text-gray-900 text-sm md:text-base">Form Builder</div>
+                                            <div className="text-xs md:text-sm text-gray-500">Capture leads with custom forms.</div>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">
                                         <svg className="w-5 h-5 text-gray-900 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M5 13l4 4L19 7" /></svg>
                                         <div>
-                                            <div className="font-bold text-gray-900">Website Visitor (Contacts)</div>
-                                            <div className="text-sm text-gray-500">Identify individual people visiting your website.</div>
+                                            <div className="font-bold text-gray-900 text-sm md:text-base">Website Visitor (Contacts)</div>
+                                            <div className="text-xs md:text-sm text-gray-500">Identify individual people visiting.</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Advanced Dialer Add-on */}
-                            <div className="bg-white border border-gray-200 rounded-[2.5rem] p-8 md:p-12 hover:shadow-xl transition-shadow duration-300">
-                                <div className="flex flex-col md:flex-row justify-between items-start mb-12">
-                                    <div>
+                            <div className="bg-white border border-gray-200 rounded-3xl p-6 md:p-12 hover:shadow-xl transition-shadow duration-300">
+                                <div className="flex flex-col md:flex-row justify-between items-start mb-8 md:mb-12">
+                                    <div className="mb-4 md:mb-0">
                                         <div className="uppercase text-purple-600 text-xs font-bold tracking-widest mb-2">ADD-ON</div>
-                                        <h3 className="text-4xl font-serif font-medium text-gray-900">Advanced Dialer</h3>
+                                        <h3 className="text-2xl md:text-4xl font-serif font-medium text-gray-900">Advanced Dialer</h3>
                                     </div>
-                                    <div className="text-right mt-4 md:mt-0">
-                                        <div className="text-4xl font-medium text-gray-900">$119</div>
+                                    <div className="text-left md:text-right">
+                                        <div className="text-3xl md:text-4xl font-medium text-gray-900">$119</div>
                                         <div className="text-xs text-gray-500 leading-tight">Per team, per month<br />billed annually</div>
                                     </div>
                                 </div>
-                                <div className="space-y-6">
+                                <div className="space-y-4 md:space-y-6">
                                     <div className="flex items-start gap-4">
                                         <svg className="w-5 h-5 text-gray-900 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M5 13l4 4L19 7" /></svg>
                                         <div>
-                                            <div className="font-bold text-gray-900">International Dialer</div>
-                                            <div className="text-sm text-gray-500">Connect with global buyers using built-in international calling.</div>
+                                            <div className="font-bold text-gray-900 text-sm md:text-base">International Dialer</div>
+                                            <div className="text-xs md:text-sm text-gray-500">Connect with global buyers.</div>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">
                                         <svg className="w-5 h-5 text-gray-900 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M5 13l4 4L19 7" /></svg>
                                         <div>
-                                            <div className="font-bold text-gray-900">Parallel Dialer</div>
-                                            <div className="text-sm text-gray-500">Multiply outbound volume by dialing multiple numbers at once.</div>
+                                            <div className="font-bold text-gray-900 text-sm md:text-base">Parallel Dialer</div>
+                                            <div className="text-xs md:text-sm text-gray-500">Multiply outbound volume.</div>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">
                                         <svg className="w-5 h-5 text-gray-900 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M5 13l4 4L19 7" /></svg>
                                         <div>
-                                            <div className="font-bold text-gray-900">Power Dialer</div>
-                                            <div className="text-sm text-gray-500">Single-line dialing with auto-advance, voicemail drop, and instant call logging.</div>
+                                            <div className="font-bold text-gray-900 text-sm md:text-base">Power Dialer</div>
+                                            <div className="text-xs md:text-sm text-gray-500">Auto-advance & voicemail drop.</div>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">
                                         <svg className="w-5 h-5 text-gray-900 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M5 13l4 4L19 7" /></svg>
                                         <div>
-                                            <div className="font-bold text-gray-900">Local Presence</div>
-                                            <div className="text-sm text-gray-500">Use local area codes to increase pickup rates.</div>
+                                            <div className="font-bold text-gray-900 text-sm md:text-base">Local Presence</div>
+                                            <div className="text-xs md:text-sm text-gray-500">Increase pickup rates.</div>
                                         </div>
                                     </div>
                                 </div>
@@ -451,7 +451,7 @@ const Pricing = () => {
                         </div>
 
                         {/* Inbound Section (Collapsed) */}
-                        <div id="inbound-features" className="bg-purple-100/50 rounded-2xl p-6 flex items-center gap-4 mb-4 opacity-70 hover:opacity-100 hover:bg-purple-100 hover:shadow-lg hover:scale-[1.01] transition-all duration-300 cursor-pointer">
+                        <div id="inbound-features" className="bg-purple-100/50 rounded-2xl p-6 flex items-center gap-4 mb-4 opacity-100 md:opacity-70 hover:opacity-100 hover:bg-purple-100 hover:shadow-lg hover:scale-[1.01] transition-all duration-300 cursor-pointer">
                             <div className="w-10 h-10 bg-[#625DF5] rounded-lg flex items-center justify-center text-white">
                                 <svg className="w-6 h-6 transform rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
                             </div>
@@ -462,7 +462,7 @@ const Pricing = () => {
                         </div>
 
                         {/* Data Enrichment Section (Collapsed) */}
-                        <div id="data-enrichment-features" className="bg-gray-100 rounded-2xl p-6 flex items-center gap-4 mb-4 opacity-70 hover:opacity-100 hover:bg-purple-50 hover:shadow-lg hover:scale-[1.01] transition-all duration-300 cursor-pointer">
+                        <div id="data-enrichment-features" className="bg-gray-100 rounded-2xl p-6 flex items-center gap-4 mb-4 opacity-100 md:opacity-70 hover:opacity-100 hover:bg-purple-50 hover:shadow-lg hover:scale-[1.01] transition-all duration-300 cursor-pointer">
                             <div className="w-10 h-10 bg-gray-400 rounded-lg flex items-center justify-center text-white">
                                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                             </div>
@@ -473,7 +473,7 @@ const Pricing = () => {
                         </div>
 
                         {/* Deal Execution Section (Collapsed) */}
-                        <div id="deal-execution-features" className="bg-gray-100 rounded-2xl p-6 flex items-center gap-4 mb-4 opacity-70 hover:opacity-100 hover:bg-purple-50 hover:shadow-lg hover:scale-[1.01] transition-all duration-300 cursor-pointer">
+                        <div id="deal-execution-features" className="bg-gray-100 rounded-2xl p-6 flex items-center gap-4 mb-4 opacity-100 md:opacity-70 hover:opacity-100 hover:bg-purple-50 hover:shadow-lg hover:scale-[1.01] transition-all duration-300 cursor-pointer">
                             <div className="w-10 h-10 bg-gray-400 rounded-lg flex items-center justify-center text-white">
                                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                             </div>
@@ -582,25 +582,25 @@ const Pricing = () => {
 
                         {/* Right Column: Testimonial Card */}
                         <div className="relative">
-                            <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl border border-gray-100 relative overflow-hidden">
+                            <div className="bg-white rounded-3xl p-6 md:p-12 shadow-xl border border-gray-100 relative overflow-hidden">
                                 {/* Background Gradient Blob */}
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-purple-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
 
-                                <Quote className="w-12 h-12 text-gray-900 mb-6 relative z-10" fill="currentColor" />
+                                <Quote className="w-8 h-8 md:w-12 md:h-12 text-gray-900 mb-4 md:mb-6 relative z-10" fill="currentColor" />
 
-                                <blockquote className="text-xl md:text-2xl font-medium text-gray-900 mb-12 relative z-10 leading-relaxed">
-                                    "We reduced the complexity of three tools into one. We're getting higher reply rates, open rates are doubled, meetings are up, and speed to booking a meeting is cut in half. This is the sales platform for people who want to do more with their outreach."
+                                <blockquote className="text-sm md:text-2xl font-medium text-gray-900 mb-8 md:mb-12 relative z-10 leading-relaxed">
+                                    "We reduced the complexity of three tools into one. We're getting higher reply rates, open rates are doubled..."
                                 </blockquote>
 
-                                <div className="flex flex-col md:flex-row items-end justify-between gap-8 relative z-10">
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-16 h-16 rounded-2xl bg-gray-200 overflow-hidden shrink-0">
+                                <div className="flex flex-col md:flex-row items-end justify-between gap-6 relative z-10">
+                                    <div className="flex items-center gap-3 md:gap-4">
+                                        <div className="w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gray-200 overflow-hidden shrink-0">
                                             {/* Placeholder for User Image */}
                                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Abhay Suman" className="w-full h-full object-cover" />
                                         </div>
                                         <div>
-                                            <div className="font-bold text-gray-900">Abhay Suman</div>
-                                            <div className="text-sm text-gray-500">CEO at Outmate</div>
+                                            <div className="font-bold text-gray-900 text-sm md:text-base">Abhay Suman</div>
+                                            <div className="text-xs md:text-sm text-gray-500">CEO at Outmate</div>
                                         </div>
                                     </div>
 

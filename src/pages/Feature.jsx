@@ -122,11 +122,11 @@ const Feature = () => {
                                 { icon: <Clock size={24} />, title: 'Manual Grunt Work', desc: 'Reps spend 70% of their week researching and entering data instead of selling.' },
                                 { icon: <BarChart size={24} />, title: 'Static Lists', desc: 'By the time you build a list, the buying window has already potential closed.' }
                             ].map((item, i) => (
-                                <div key={i} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-shadow group">
+                                <div key={i} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl active:scale-95 transition-all duration-200 group cursor-pointer">
                                     <div className="w-12 h-12 rounded-xl bg-gray-900 text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                         {item.icon}
                                     </div>
-                                    <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: 'SN Pro, sans-serif' }}>{item.title}</h3>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors" style={{ fontFamily: 'SN Pro, sans-serif' }}>{item.title}</h3>
                                     <p className="text-gray-500 leading-relaxed" style={{ fontFamily: 'Calibri, sans-serif' }}>
                                         {item.desc}
                                     </p>
@@ -254,7 +254,7 @@ const Feature = () => {
                     </section>
 
                     {/* Qualification Section */}
-                    <section id="scoring" className="py-32 px-6 md:px-12 bg-white border-t border-gray-100">
+                    <section id="scoring" className="py-16 md:py-32 px-6 md:px-12 bg-white border-t border-gray-100">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                             {/* Left Visual - Lead Score */}
                             <div className="bg-gray-50 rounded-2xl p-8 md:p-12 flex items-center justify-center">
@@ -263,9 +263,14 @@ const Feature = () => {
                                         <h3 className="font-bold text-gray-900 text-lg" style={{ fontFamily: 'SN Pro, sans-serif' }}>Lead Score</h3>
                                     </div>
                                     <div className="flex justify-center mb-8 relative">
-                                        <div className="w-40 h-40 rounded-full border-[12px] border-gray-100 flex items-center justify-center relative">
-                                            <div className="absolute inset-0 rounded-full border-[12px] border-blue-500 border-t-transparent border-l-transparent transform -rotate-45" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}></div>
-                                            <div className="text-center z-10">
+                                        <div className="relative w-40 h-40">
+                                            <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
+                                                {/* Background Circle */}
+                                                <circle cx="50" cy="50" r="45" stroke="#f3f4f6" strokeWidth="8" fill="transparent" />
+                                                {/* Progress Path (94%) */}
+                                                <path d="M 50,5 A 45,45 0 1,1 9.5,74" fill="none" stroke="#3b82f6" strokeWidth="8" strokeLinecap="round" />
+                                            </svg>
+                                            <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
                                                 <div className="text-3xl font-bold text-gray-900" style={{ fontFamily: 'SN Pro, sans-serif' }}>94</div>
                                                 <div className="text-xs text-gray-400 font-medium">/100</div>
                                             </div>
@@ -318,7 +323,7 @@ const Feature = () => {
                     </section>
 
                     {/* Automation Section */}
-                    <section id="automation" className="py-32 px-6 md:px-12 bg-gray-50/50">
+                    <section id="automation" className="py-16 md:py-32 px-6 md:px-12 bg-gray-50/50">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                             {/* Left Content */}
                             <div>
@@ -373,7 +378,7 @@ const Feature = () => {
                     </section>
 
                     {/* System Intelligence Section */}
-                    <section id="intelligence" className="py-32 px-6 md:px-12 bg-white border-t border-gray-100">
+                    <section id="intelligence" className="py-16 md:py-32 px-6 md:px-12 bg-white border-t border-gray-100">
                         <div className="text-center mb-20 max-w-4xl mx-auto">
                             <div className="inline-block px-4 py-1.5 rounded-full bg-purple-100 text-purple-700 font-bold text-xs tracking-wider uppercase mb-8">
                                 System Intelligence
