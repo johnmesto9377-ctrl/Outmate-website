@@ -589,7 +589,7 @@ const Pricing = () => {
                                 <Quote className="w-8 h-8 md:w-12 md:h-12 text-gray-900 mb-4 md:mb-6 relative z-10" fill="currentColor" />
 
                                 <blockquote className="text-sm md:text-2xl font-medium text-gray-900 mb-8 md:mb-12 relative z-10 leading-relaxed">
-                                    "We reduced the complexity of three tools into one. We're getting higher reply rates, open rates are doubled..."
+                                    "We reduced the complexity of three tools into one. We're getting higher reply rates, open rates are doubled, meetings are up, and speed to booking a meeting is cut in half. This is the sales platform for people who want to do more with their outreach."
                                 </blockquote>
 
                                 <div className="flex flex-col md:flex-row items-end justify-between gap-6 relative z-10">
