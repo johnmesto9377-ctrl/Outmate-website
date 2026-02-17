@@ -106,6 +106,7 @@ const Navbar = ({ isContained = false }) => {
             {isOpen && (
                 <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-4 flex flex-col gap-4 shadow-xl">
                     <Link to="/" className="p-2 hover:bg-gray-50 rounded-lg text-gray-600 font-medium" onClick={() => setIsOpen(false)} target="_blank" rel="noopener noreferrer">Home</Link>
+                    <Link to="/feature" className="p-2 hover:bg-gray-50 rounded-lg text-gray-600 font-medium" onClick={() => setIsOpen(false)} target="_blank" rel="noopener noreferrer">Features</Link>
                     <div className="p-2 text-gray-400 text-xs font-bold uppercase tracking-wider">Solutions</div>
                     <Link to="/core-engine" className="pl-4 p-2 hover:bg-gray-50 rounded-lg text-gray-600 font-medium block" onClick={() => setIsOpen(false)} target="_blank" rel="noopener noreferrer">Core GTM Engine</Link>
                     <Link to="/platform" className="pl-4 p-2 hover:bg-gray-50 rounded-lg text-gray-600 font-medium block" onClick={() => setIsOpen(false)} target="_blank" rel="noopener noreferrer">Platform Overview</Link>

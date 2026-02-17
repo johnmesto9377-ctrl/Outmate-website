@@ -14,10 +14,10 @@ const Pricing = () => {
             <div className="max-w-[1200px] mx-auto bg-white/50 border border-white/50 relative z-10 backdrop-blur-3xl">
                 <Navbar isContained={true} />
 
-                <main className="pt-32 px-6 md:px-12 pb-20">
+                <main className="pt-24 md:pt-32 px-6 md:px-12 pb-20">
                     {/* Section 1: Hero & Trusted Companies */}
                     <div className="max-w-6xl mx-auto">
-                        <div className="flex flex-col md:flex-row items-center justify-between gap-12 mb-20">
+                        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 mb-12 md:mb-20">
                             {/* Adjusted width to full to prevent wrapping */}
                             <div className="text-left w-full">
                                 <div className="flex items-center gap-2 mb-6">
@@ -26,8 +26,8 @@ const Pricing = () => {
                                 </div>
 
                                 {/* Removed italic from pricing and ensured nowrap */}
-                                <h1 className="text-5xl md:text-7xl font-serif font-medium mb-6 text-gray-900 leading-tight whitespace-nowrap">
-                                    Flexible, risk-free <span className="text-primary">pricing</span>
+                                <h1 className="text-4xl md:text-7xl font-serif font-medium mb-6 text-gray-900 leading-tight">
+                                    Flexible, risk-free <span className="text-purple-600">pricing</span>
                                 </h1>
 
                                 <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-xl">
@@ -48,7 +48,7 @@ const Pricing = () => {
                         {/* Trusted Companies */}
                         <div className="border-t border-gray-100 bg-purple-50/50 -mx-6 md:-mx-12 px-6 md:px-12 py-12">
                             <p className="text-center text-sm text-gray-600 font-medium mb-8 uppercase tracking-widest">trusted by 300,000 leading gtm teams:</p>
-                            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-80 grayscale-0">
+                            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-16 opacity-80 grayscale-0">
                                 {/* Zapier Logo */}
                                 <div className="flex items-center gap-1 font-bold text-2xl text-[#FF4F00]"><span className="text-3xl leading-none">*</span> zapier</div>
                                 {/* Razorpay Logo */}
@@ -321,7 +321,7 @@ const Pricing = () => {
 
 
                     {/* Section 4: Compare Plans Header */}
-                    <div className="max-w-[1400px] mx-auto mb-8">
+                    <div className="max-w-[1400px] mx-auto mb-8 hidden md:block">
                         {/* Sticky Header for Comparison Table */}
                         <div className="sticky top-0 bg-white/90 backdrop-blur-xl z-20 py-10 px-10 border-b border-gray-100 rounded-[2.5rem]">
                             <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-end">
@@ -407,44 +407,46 @@ const Pricing = () => {
                             </div>
 
                             {/* Features List */}
-                            <div className="bg-white border-x border-b border-gray-200 rounded-b-2xl divide-y divide-gray-100">
-                                {[
-                                    { name: "AI Assistant", checks: [true, true, true, true] },
-                                    { name: "AI Research", checks: [true, true, true, true] },
-                                    { name: "2 Sequences", checks: [true, true, true, true] },
-                                    { name: "Prospecting, Gmail & Salesforce Extensions", checks: [true, true, true, true] },
-                                    { name: "Deliverability Suite & Email Warmup", checks: [true, true, true, true] },
-                                    { name: "Basic Filters", checks: [true, true, true, true] },
-                                    { name: "CRM Integrations", checks: [true, true, true, true] },
-                                    { name: "Waterfall Enrichment", checks: [true, true, true, true] },
-                                    { name: "3 Meetings Events", checks: [true, true, true, true] },
-                                    { name: "6 Intent Topics & Intent Filters", checks: [true, true, true, true] },
-                                    { name: "CSV, CRM & API Data Enrichment", checks: [false, true, true, true] },
-                                    { name: "Domain & Mailbox Purchasing", checks: [false, true, true, true] },
-                                    { name: "US Dialer (credits apply)", checks: [false, true, true, true] },
-                                    { name: "Unlimited Gmail & Microsoft Mailboxes", checks: [false, true, true, true] },
-                                    { name: "Automated Workflows", checks: [false, true, true, true] },
-                                    { name: "Call Recordings & AI Insights (4,000 mins)", checks: [false, false, true, true] },
-                                    { name: "Analytics & Pre-built Reports", checks: [false, false, true, true] },
-                                    { name: "Customizable Reports & Dashboards", checks: [false, false, true, true] },
-                                    { name: "Advanced Security Configurations", checks: [false, false, false, true] },
-                                    { name: "Single Sign-on (SSO)", checks: [false, false, false, true] },
-                                    { name: "Use your own LLM API key", checks: [false, false, false, true] },
-                                ].map((feature, idx) => (
-                                    <div key={idx} className={`grid grid-cols-1 md:grid-cols-5 gap-8 items-center py-4 px-6 ${idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'} hover:bg-gray-50 transition-colors`}>
-                                        <div className="text-sm font-medium text-gray-900">{feature.name}</div>
-                                        {feature.checks.map((isChecked, i) => (
-                                            <div key={i} className="flex justify-center md:block md:pl-8">
-                                                {isChecked ? (
-                                                    <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center text-white">
-                                                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path d="M5 13l4 4L19 7" /></svg>
-                                                    </div>
-                                                ) : <div className="w-6 h-6" />}
-                                                <span className="md:hidden ml-2 text-sm text-gray-500">{['Free', 'Basic', 'Professional', 'Organization'][i]}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                ))}
+                            <div className="overflow-x-auto pb-4">
+                                <div className="bg-white border-x border-b border-gray-200 rounded-b-2xl divide-y divide-gray-100 min-w-[800px]">
+                                    {[
+                                        { name: "AI Assistant", checks: [true, true, true, true] },
+                                        { name: "AI Research", checks: [true, true, true, true] },
+                                        { name: "2 Sequences", checks: [true, true, true, true] },
+                                        { name: "Prospecting, Gmail & Salesforce Extensions", checks: [true, true, true, true] },
+                                        { name: "Deliverability Suite & Email Warmup", checks: [true, true, true, true] },
+                                        { name: "Basic Filters", checks: [true, true, true, true] },
+                                        { name: "CRM Integrations", checks: [true, true, true, true] },
+                                        { name: "Waterfall Enrichment", checks: [true, true, true, true] },
+                                        { name: "3 Meetings Events", checks: [true, true, true, true] },
+                                        { name: "6 Intent Topics & Intent Filters", checks: [true, true, true, true] },
+                                        { name: "CSV, CRM & API Data Enrichment", checks: [false, true, true, true] },
+                                        { name: "Domain & Mailbox Purchasing", checks: [false, true, true, true] },
+                                        { name: "US Dialer (credits apply)", checks: [false, true, true, true] },
+                                        { name: "Unlimited Gmail & Microsoft Mailboxes", checks: [false, true, true, true] },
+                                        { name: "Automated Workflows", checks: [false, true, true, true] },
+                                        { name: "Call Recordings & AI Insights (4,000 mins)", checks: [false, false, true, true] },
+                                        { name: "Analytics & Pre-built Reports", checks: [false, false, true, true] },
+                                        { name: "Customizable Reports & Dashboards", checks: [false, false, true, true] },
+                                        { name: "Advanced Security Configurations", checks: [false, false, false, true] },
+                                        { name: "Single Sign-on (SSO)", checks: [false, false, false, true] },
+                                        { name: "Use your own LLM API key", checks: [false, false, false, true] },
+                                    ].map((feature, idx) => (
+                                        <div key={idx} className={`grid grid-cols-5 gap-8 items-center py-4 px-6 ${idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'} hover:bg-gray-50 transition-colors`}>
+                                            <div className="text-sm font-medium text-gray-900">{feature.name}</div>
+                                            {feature.checks.map((isChecked, i) => (
+                                                <div key={i} className="flex justify-center md:block md:pl-8">
+                                                    {isChecked ? (
+                                                        <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center text-white">
+                                                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path d="M5 13l4 4L19 7" /></svg>
+                                                        </div>
+                                                    ) : <div className="w-6 h-6" />}
+                                                    <span className="md:hidden ml-2 text-sm text-gray-500">{['Free', 'Basic', 'Professional', 'Organization'][i]}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
 

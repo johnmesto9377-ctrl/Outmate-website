@@ -22,7 +22,7 @@ const Feature = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             {/* Left Content */}
                             <div>
-                                <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-gray-900 mb-8 leading-[1.1]" style={{ fontFamily: 'Calibri, sans-serif' }}>
+                                <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 mb-8 leading-[1.1]" style={{ fontFamily: 'Calibri, sans-serif' }}>
                                     Find, qualify, and engage<br />leads on <span className="text-purple-600 italic">autopilot</span>
                                 </h1>
                                 <p className="text-xl text-gray-500 mb-12 leading-relaxed" style={{ fontFamily: 'Calibri, sans-serif' }}>

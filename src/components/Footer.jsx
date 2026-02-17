@@ -75,12 +75,12 @@ const Footer = () => {
                 <div className="flex items-center justify-center mb-16 select-none pointer-events-none">
                     <div className="relative flex items-center gap-4 md:gap-8">
                         {/* Logo Icon */}
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-24 h-24 md:w-32 md:h-32 text-white/80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-16 h-16 md:w-32 md:h-32 text-white/80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M3 10L12 3L21 10" />
                             <circle cx="12" cy="16" r="5" />
                         </svg>
                         {/* Text */}
-                        <h1 className="text-[5rem] md:text-[8rem] lg:text-[10rem] font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 leading-none tracking-tight drop-shadow-2xl" style={{ fontFamily: 'Arial, sans-serif' }}>
+                        <h1 className="text-6xl md:text-[8rem] lg:text-[10rem] font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 leading-none tracking-tight drop-shadow-2xl" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Outmate
                         </h1>
                     </div>
