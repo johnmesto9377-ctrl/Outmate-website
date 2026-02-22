@@ -5,6 +5,11 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 const Navbar = ({ isContained = false }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
+
+    const toggleMobileDropdown = (name) => {
+        setActiveMobileDropdown(activeMobileDropdown === name ? null : name);
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -104,23 +109,54 @@ const Navbar = ({ isContained = false }) => {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-4 flex flex-col gap-4 shadow-xl">
-                    <Link to="/" className="p-2 hover:bg-gray-50 rounded-lg text-gray-600 font-medium" onClick={() => setIsOpen(false)} target="_blank" rel="noopener noreferrer">Home</Link>
-                    <Link to="/feature" className="p-2 hover:bg-gray-50 rounded-lg text-gray-600 font-medium" onClick={() => setIsOpen(false)} target="_blank" rel="noopener noreferrer">Features</Link>
-                    <div className="p-2 text-gray-400 text-xs font-bold uppercase tracking-wider">Solutions</div>
-                    <Link to="/core-engine" className="pl-4 p-2 hover:bg-gray-50 rounded-lg text-gray-600 font-medium block" onClick={() => setIsOpen(false)} target="_blank" rel="noopener noreferrer">Core GTM Engine</Link>
-                    <Link to="/platform" className="pl-4 p-2 hover:bg-gray-50 rounded-lg text-gray-600 font-medium block" onClick={() => setIsOpen(false)} target="_blank" rel="noopener noreferrer">Platform Overview</Link>
+                <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-4 flex flex-col gap-2 shadow-xl overflow-y-auto max-h-[calc(100vh-80px)]">
+                    <Link to="/" className="p-3 hover:bg-gray-50 rounded-xl text-gray-900 font-semibold text-lg" onClick={() => setIsOpen(false)}>Home</Link>
+                    <Link to="/feature" className="p-3 hover:bg-gray-50 rounded-xl text-gray-900 font-semibold text-lg" onClick={() => setIsOpen(false)}>Features</Link>
 
-                    <Link to="/pricing" className="p-2 hover:bg-gray-50 rounded-lg text-gray-600 font-medium" onClick={() => setIsOpen(false)} target="_blank" rel="noopener noreferrer">Pricing</Link>
+                    {/* Solutions Mobile Dropdown */}
+                    <div>
+                        <button
+                            className="w-full flex items-center justify-between p-3 hover:bg-gray-50 rounded-xl text-gray-900 font-semibold text-lg"
+                            onClick={() => toggleMobileDropdown('solutions')}
+                        >
+                            Solutions <ChevronDown size={18} className={`transition-transform duration-200 ${activeMobileDropdown === 'solutions' ? 'rotate-180' : ''}`} />
+                        </button>
+                        {activeMobileDropdown === 'solutions' && (
+                            <div className="pl-6 flex flex-col gap-1 mt-1 pb-2">
+                                <Link to="/core-engine" className="p-2 text-gray-600 font-medium hover:text-purple-600" onClick={() => setIsOpen(false)}>Core GTM Engine</Link>
+                                <Link to="/platform" className="p-2 text-gray-600 font-medium hover:text-purple-600" onClick={() => setIsOpen(false)}>Platform Overview</Link>
+                                <Link to="#" className="p-2 text-gray-600 font-medium hover:text-purple-600" onClick={() => setIsOpen(false)}>Integrations</Link>
+                            </div>
+                        )}
+                    </div>
 
-                    <div className="p-2 text-gray-400 text-xs font-bold uppercase tracking-wider">Resources</div>
-                    <Link to="/book-demo" className="pl-4 p-2 hover:bg-gray-50 rounded-lg text-gray-600 font-medium block" onClick={() => setIsOpen(false)} target="_blank" rel="noopener noreferrer">Book a Demo</Link>
+                    <Link to="/pricing" className="p-3 hover:bg-gray-50 rounded-xl text-gray-900 font-semibold text-lg" onClick={() => setIsOpen(false)}>Pricing</Link>
+
+                    {/* Resources Mobile Dropdown */}
+                    <div>
+                        <button
+                            className="w-full flex items-center justify-between p-3 hover:bg-gray-50 rounded-xl text-gray-900 font-semibold text-lg"
+                            onClick={() => toggleMobileDropdown('resources')}
+                        >
+                            Resources <ChevronDown size={18} className={`transition-transform duration-200 ${activeMobileDropdown === 'resources' ? 'rotate-180' : ''}`} />
+                        </button>
+                        {activeMobileDropdown === 'resources' && (
+                            <div className="pl-6 flex flex-col gap-1 mt-1 pb-2">
+                                <Link to="/book-demo" className="p-2 text-gray-600 font-medium hover:text-purple-600" onClick={() => setIsOpen(false)}>Book a Demo</Link>
+                                <Link to="#" className="p-2 text-gray-600 font-medium hover:text-purple-600" onClick={() => setIsOpen(false)}>Blog</Link>
+                                <Link to="#" className="p-2 text-gray-600 font-medium hover:text-purple-600" onClick={() => setIsOpen(false)}>Help Center</Link>
+                            </div>
+                        )}
+                    </div>
 
                     <div className="h-px bg-gray-100 my-2" />
-                    <Link to="/login" className="p-2 text-center text-gray-600 font-medium" onClick={() => setIsOpen(false)} target="_blank" rel="noopener noreferrer">Login</Link>
-                    <Link to="/signup" className="btn-primary w-full text-center justify-center" onClick={() => setIsOpen(false)} target="_blank" rel="noopener noreferrer">
-                        Get Started
-                    </Link>
+
+                    <div className="flex flex-col gap-3 p-2">
+                        <Link to="/login" className="p-3 text-center text-gray-700 font-bold border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors" onClick={() => setIsOpen(false)}>Login</Link>
+                        <Link to="/book-demo" className="bg-black text-white p-4 rounded-xl text-center font-bold shadow-lg shadow-gray-200 active:scale-95 transition-all" onClick={() => setIsOpen(false)}>
+                            Book a demo
+                        </Link>
+                    </div>
                 </div>
             )}
         </nav>

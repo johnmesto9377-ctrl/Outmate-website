@@ -26,7 +26,7 @@ const Pricing = () => {
                                 </div>
 
                                 {/* Removed italic from pricing and ensured nowrap */}
-                                <h1 className="text-4xl md:text-7xl font-serif font-medium mb-6 text-gray-900 leading-tight">
+                                <h1 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight" style={{ fontFamily: 'Arial, sans-serif' }}>
                                     Flexible, risk-free <span className="text-purple-600">pricing</span>
                                 </h1>
 
@@ -320,7 +320,41 @@ const Pricing = () => {
                     </div>
 
 
-                    {/* Section 4: Compare Plans Header */}
+                    {/* Section 4: Mobile Comparison (Visible only on small screens) */}
+                    <div className="md:hidden max-w-[1400px] mx-auto mb-16 px-4">
+                        <h2 className="text-3xl font-serif font-medium text-gray-900 mb-8">Compare plans</h2>
+                        <div className="space-y-6">
+                            {[
+                                { name: "Free", price: "$0", credits: "900", features: ["AI Assistant", "AI Research", "2 Sequences"] },
+                                { name: "Basic", price: "$49", credits: "30,000", features: ["CRM Integrations", "Waterfall Enrichment", "US Dialer"] },
+                                { name: "Professional", price: "$79", credits: "48,000", features: ["Unlimited Mailboxes", "Automated Workflows", "AI Insights"] },
+                                { name: "Organization", price: "$119", credits: "72,000", features: ["Advanced Security", "SSO", "API Access"] }
+                            ].map((plan, i) => (
+                                <div key={i} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                                    <div className="flex justify-between items-end mb-4">
+                                        <div>
+                                            <h3 className="text-xl font-bold text-gray-900">{plan.name}</h3>
+                                            <div className="text-2xl font-bold text-purple-600">{plan.price}<span className="text-sm text-gray-400 font-normal">/mo</span></div>
+                                        </div>
+                                        <div className="text-right">
+                                            <div className="text-sm font-bold text-gray-900">{plan.credits} credits</div>
+                                            <div className="text-[10px] text-gray-500">per user/year</div>
+                                        </div>
+                                    </div>
+                                    <div className="space-y-2 mb-6">
+                                        {plan.features.map((f, j) => (
+                                            <div key={j} className="flex items-center gap-2 text-sm text-gray-600">
+                                                <Check size={14} className="text-purple-500" /> {f}
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <button className="w-full bg-purple-600 text-white py-3 rounded-xl font-bold text-sm">Get Started</button>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Section 4: Compare Plans Header (Desktop only) */}
                     <div className="max-w-[1400px] mx-auto mb-8 hidden md:block">
                         {/* Sticky Header for Comparison Table */}
                         <div className="sticky top-0 bg-white/90 backdrop-blur-xl z-20 py-10 px-10 border-b border-gray-100 rounded-[2.5rem]">
@@ -592,7 +626,7 @@ const Pricing = () => {
                                     "We reduced the complexity of three tools into one. We're getting higher reply rates, open rates are doubled, meetings are up, and speed to booking a meeting is cut in half. This is the sales platform for people who want to do more with their outreach."
                                 </blockquote>
 
-                                <div className="flex flex-col md:flex-row items-end justify-between gap-6 relative z-10">
+                                <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 relative z-10">
                                     <div className="flex items-center gap-3 md:gap-4">
                                         <div className="w-10 h-10 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gray-200 overflow-hidden shrink-0">
                                             {/* Placeholder for User Image */}
@@ -604,8 +638,8 @@ const Pricing = () => {
                                         </div>
                                     </div>
 
-                                    <div className="text-right">
-                                        <div className="text-5xl md:text-6xl font-medium text-gray-900 mb-1">50%</div>
+                                    <div className="text-left md:text-right">
+                                        <div className="text-4xl md:text-6xl font-medium text-gray-900 mb-1">50%</div>
                                         <div className="text-sm text-gray-600">Meeting rate increased</div>
                                     </div>
                                 </div>

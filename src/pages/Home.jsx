@@ -1,14 +1,51 @@
 import React from 'react';
-import { ArrowRight, ArrowUpRight, Activity, GitMerge, ShieldCheck, Maximize, Check, Search, Shield, Zap, BarChart, Settings, Users, Layers, Clock, Satellite, Filter, Wand2, RefreshCw, TrendingUp, Target, Factory, Briefcase, User, CornerDownLeft } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Activity, GitMerge, ShieldCheck, Maximize, Check, Search, Shield, Zap, BarChart, Settings, Users, Layers, Clock, Satellite, Filter, Wand2, RefreshCw, TrendingUp, Target, Factory, Briefcase, User, CornerDownLeft, Bot, PieChart, Coins, UserPlus, HeartHandshake, Database, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import Navbar from '../components/Navbar';
 
 const Home = () => {
     const [activeTab, setActiveTab] = React.useState('signals');
+    const [textIndex, setTextIndex] = React.useState(0);
+    const [isVisible, setIsVisible] = React.useState(true);
+
+    const rotatingTexts = [
+        "Pipeline Growth.",
+        "Scalable Outbound.",
+        "Founder-Led Sales.",
+        "Faster Prospecting.",
+        "High-Intent Leads.",
+        "Automated Lead Discovery."
+    ];
+
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            setIsVisible(false);
+            setTimeout(() => {
+                setTextIndex((prev) => (prev + 1) % rotatingTexts.length);
+                setIsVisible(true);
+            }, 500); // Wait for fade out
+        }, 5500); // Change every 5.5 seconds
+
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div className="pt-0 pb-24 px-6 md:px-12 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-200/40 via-white to-white">
+            <style>
+                {`
+                .fade-text {
+                    display: inline-block;
+                    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                .fade-text.hidden {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                `}
+            </style>
             <div className="max-w-[1200px] mx-auto bg-white/50 border border-white/50 ring-1 ring-gray-900/5 relative z-10 backdrop-blur-3xl">
                 <Navbar isContained={true} />
 
@@ -20,9 +57,11 @@ const Home = () => {
                             <span className="text-xs font-medium text-gray-600 uppercase tracking-wide">Built for Modern B2B & GTM teams</span>
                         </div>
 
-                        <h1 className="text-4xl md:text-6xl font-serif font-medium mb-6 text-gray-900 leading-[1.1] tracking-tight">
-                            Not Another Database. A Lead<br />
-                            Engine Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Pipeline Growth.</span>
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-8 leading-[1.1] min-h-[1.2em]" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            Find and qualify leads for<br />
+                            <span className={`inline-block transition-all duration-500 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} text-purple-600 italic`}>
+                                {rotatingTexts[textIndex]}
+                            </span>
                         </h1>
 
                         <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -107,14 +146,48 @@ const Home = () => {
                             </div>
 
                             {/* Right Content - Cards Stack */}
-                            <div className="relative h-[500px] flex items-center justify-center lg:justify-end">
+                            <div className="relative h-[500px] sm:h-[600px] md:h-[700px] flex items-center justify-center lg:justify-end">
                                 {/* Scrollable Container */}
-                                <div className="h-full w-full overflow-y-auto pr-2 space-y-6 custom-scrollbar">
-                                    {[...Array(6)].map((_, index) => (
-                                        <div key={index} className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 transform transition-all hover:scale-[1.01]">
-                                            <h3 className="text-lg font-bold text-gray-900 mb-2">Pain Point Template #{index + 1}</h3>
-                                            <p className="text-gray-500 text-sm leading-relaxed">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                <div className="h-full w-full overflow-y-auto pr-2 space-y-4 md:space-y-6 custom-scrollbar pb-20">
+                                    {[
+                                        {
+                                            title: "Clay feels powerful, but the learning curve is brutal",
+                                            desc: "You shouldn't need a PhD in automation to find a lead. Outmate is built for sales people, not engineers. Get up and running in minutes, not days."
+                                        },
+                                        {
+                                            title: "Your GTM stack is getting expensive fast",
+                                            desc: "Between LinkedIn Premium, enrichment tools, and outreach platforms, you're paying thousands. Outmate consolidates your stack at a fraction of the cost."
+                                        },
+                                        {
+                                            title: "You’re managing too many tools",
+                                            desc: "Data in one place, sequences in another, CRM in a third. Outmate brings your entire GTM process into one unified intelligence layer."
+                                        },
+                                        {
+                                            title: "AI workflows feel fragile",
+                                            desc: "Prompts break, data maps fail, and bots hallucinate. Outmate’s agentic engine is built for reliability, with human-in-the-loop triggers where they matter most."
+                                        },
+                                        {
+                                            title: "Personalization still feels manual",
+                                            desc: "Copy-pasting 'I saw your post about X' isn't personalization. Outmate uses deep signals to write messages that actually sound human and get replies."
+                                        },
+                                        {
+                                            title: "You don’t trust your data",
+                                            desc: "Bounced emails and wrong phone numbers kill deliverability. We multi-source and verify every data point in real-time before you ever hit send."
+                                        }
+                                    ].map((card, index) => (
+                                        <div
+                                            key={index}
+                                            className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100 sticky transform transition-all hover:scale-[1.01]"
+                                            style={{
+                                                top: `${index * (window.innerWidth < 768 ? 10 : 20)}px`,
+                                                marginBottom: '40px',
+                                                zIndex: index + 1
+                                            }}
+                                        >
+                                            <div className="text-purple-600 font-bold mb-2">0{index + 1}</div>
+                                            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'SN Pro, sans-serif' }}>{card.title}</h3>
+                                            <p className="text-gray-500 leading-relaxed" style={{ fontFamily: 'Calibri, sans-serif' }}>
+                                                {card.desc}
                                             </p>
                                         </div>
                                     ))}
@@ -635,14 +708,109 @@ const Home = () => {
                         </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {[...Array(9)].map((_, i) => (
-                                <div key={i} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                                    <h3 className="text-xl font-bold mb-4 text-gray-900" style={{ fontFamily: 'SN Pro, sans-serif' }}>
-                                        Your 24/7 AI SDR companion
+                            {[
+                                {
+                                    title: "Your 24/7 AI SDR companion",
+                                    desc: "Use Outmate as the data and signals layer for your AI SDR or agent product. Power prospecting, enrichment, and personalization with real-time intelligence.",
+                                    cta: "Power your AI SDR",
+                                    icon: <Bot size={24} className="text-purple-600" />
+                                },
+                                {
+                                    title: "Internal Sales Tools",
+                                    subtitle: "Save your sales team hours every week",
+                                    desc: "Replace manual research and list building with automated lead discovery and qualification.",
+                                    cta: "Build internal sales tools",
+                                    icon: <Briefcase size={24} className="text-purple-600" />
+                                },
+                                {
+                                    title: "Sales Automation",
+                                    subtitle: "Automate prospecting and enrichment",
+                                    desc: "Continuously find, enrich, and prioritize leads without human intervention.",
+                                    cta: "Automate sales",
+                                    icon: <Zap size={24} className="text-purple-600" />
+                                },
+                                {
+                                    title: "Marketing Automation",
+                                    subtitle: "Power AI agents, platforms, or teams",
+                                    desc: "Feed enriched, high-intent data into your marketing workflows for better targeting and personalization.",
+                                    cta: "Automate marketing",
+                                    icon: <Target size={24} className="text-purple-600" />
+                                },
+                                {
+                                    title: "Sales Pipeline Optimization",
+                                    subtitle: "Drive growth with real-time data",
+                                    desc: "Identify stalled deals, high-intent accounts, and expansion opportunities using live signals.",
+                                    cta: "Optimize pipeline",
+                                    icon: <TrendingUp size={24} className="text-purple-600" />
+                                },
+                                {
+                                    title: "TAM Analysis",
+                                    subtitle: "Search, enrich, and monitor your market",
+                                    desc: "Build and track your total addressable market with structured company intelligence.",
+                                    cta: "Analyze your TAM",
+                                    icon: <PieChart size={24} className="text-purple-600" />
+                                },
+                                {
+                                    title: "Venture Capital",
+                                    subtitle: "Custom tools that fit your investment thesis",
+                                    desc: "Track startups by funding, hiring, and growth signals to source better deals.",
+                                    cta: "Source deals",
+                                    icon: <Coins size={24} className="text-purple-600" />
+                                },
+                                {
+                                    title: "Growth Equity",
+                                    subtitle: "Stay ahead with real-time insights",
+                                    desc: "Monitor portfolio companies and market trends using live data signals.",
+                                    cta: "Track growth",
+                                    icon: <BarChart size={24} className="text-purple-600" />
+                                },
+                                {
+                                    title: "Recruiting Platforms",
+                                    subtitle: "Find and track ideal candidates",
+                                    desc: "Use real-time job changes and company signals to power sourcing and matching.",
+                                    cta: "Build recruiting workflows",
+                                    icon: <UserPlus size={24} className="text-purple-600" />
+                                },
+                                {
+                                    title: "Customer Success",
+                                    subtitle: "Never lose another customer",
+                                    desc: "Track customer signals like role changes, funding, and product usage to prevent churn.",
+                                    cta: "Improve retention",
+                                    icon: <HeartHandshake size={24} className="text-purple-600" />
+                                },
+                                {
+                                    title: "Data Enrichment",
+                                    subtitle: "B2B enrichment for AI, Sales, & more",
+                                    desc: "Enhance your internal tools with structured company and people data.",
+                                    cta: "Enrich your data",
+                                    icon: <Database size={24} className="text-purple-600" />
+                                },
+                                {
+                                    title: "Access Web Intelligence",
+                                    subtitle: "Turn the web into structured data",
+                                    desc: "Monitor websites and online sources to extract real-time business intelligence.",
+                                    cta: "Access web intelligence",
+                                    icon: <Globe size={24} className="text-purple-600" />
+                                }
+                            ].map((card, i) => (
+                                <div key={i} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all group flex flex-col h-full">
+                                    <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                        {card.icon}
+                                    </div>
+                                    <h3 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-purple-600 transition-colors" style={{ fontFamily: 'SN Pro, sans-serif' }}>
+                                        {card.title}
                                     </h3>
-                                    <p className="text-gray-500 leading-relaxed" style={{ fontFamily: 'Calibri, sans-serif', fontSize: '17px' }}>
-                                        Use Outmate as the data and signals layer for your AI SDR or agent product. Power prospecting, enrichment, and personalization with real-time intelligence.
+                                    {card.subtitle && (
+                                        <p className="text-sm font-bold text-gray-900 mb-4">{card.subtitle}</p>
+                                    )}
+                                    <p className="text-gray-500 leading-relaxed mb-6 flex-grow" style={{ fontFamily: 'Calibri, sans-serif', fontSize: '16px' }}>
+                                        {card.desc}
                                     </p>
+                                    <div className="pt-4 border-t border-gray-50">
+                                        <Link to="/book-demo" className="text-purple-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                                            {card.cta} <ArrowRight size={16} />
+                                        </Link>
+                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -746,13 +914,19 @@ const Home = () => {
                             </div>
 
                             <div className="relative">
-                                {/* Data Sources Image */}
+                                {/* Data Sources Logo Illustration */}
                                 <div className="relative w-full flex items-center justify-center">
-                                    <img
-                                        src="/one.png"
-                                        alt="One system, hundreds of data sources"
-                                        className="w-full h-auto max-w-[500px] object-contain"
-                                    />
+                                    <div className="relative w-full max-w-[450px] aspect-square bg-black rounded-[40px] flex items-center justify-center overflow-hidden shadow-2xl border border-white/10">
+                                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_purple_0%,transparent_70%)] opacity-20"></div>
+                                        <div className="relative transform hover:scale-110 transition-transform duration-700">
+                                            <svg width="240" height="240" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white drop-shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+                                                {/* Chevron / Roof */}
+                                                <path d="M10 38L50 10L90 38" stroke="currentColor" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
+                                                {/* Circle */}
+                                                <circle cx="50" cy="65" r="28" stroke="currentColor" strokeWidth="11" />
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

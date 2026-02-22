@@ -22,10 +22,10 @@ const Feature = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             {/* Left Content */}
                             <div>
-                                <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 mb-8 leading-[1.1]" style={{ fontFamily: 'Calibri, sans-serif' }}>
+                                <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-gray-900 mb-8 leading-[1.1]" style={{ fontFamily: 'Arial, sans-serif' }}>
                                     Find, qualify, and engage<br />leads on <span className="text-purple-600 italic">autopilot</span>
                                 </h1>
-                                <p className="text-xl text-gray-500 mb-12 leading-relaxed" style={{ fontFamily: 'Calibri, sans-serif' }}>
+                                <p className="text-lg md:text-xl text-gray-500 mb-12 leading-relaxed" style={{ fontFamily: 'Calibri, sans-serif' }}>
                                     Outmate is an agentic GTM platform that turns raw data into real pipeline. Replaces hours of manual prospecting with an automated system.
                                 </p>
 
@@ -263,7 +263,7 @@ const Feature = () => {
                                         <h3 className="font-bold text-gray-900 text-lg" style={{ fontFamily: 'SN Pro, sans-serif' }}>Lead Score</h3>
                                     </div>
                                     <div className="flex justify-center mb-8 relative">
-                                        <div className="relative w-40 h-40">
+                                        <div className="relative w-32 h-32 md:w-40 md:h-40">
                                             <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
                                                 {/* Background Circle */}
                                                 <circle cx="50" cy="50" r="45" stroke="#f3f4f6" strokeWidth="8" fill="transparent" />
@@ -271,8 +271,8 @@ const Feature = () => {
                                                 <path d="M 50,5 A 45,45 0 1,1 9.5,74" fill="none" stroke="#3b82f6" strokeWidth="8" strokeLinecap="round" />
                                             </svg>
                                             <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                                                <div className="text-3xl font-bold text-gray-900" style={{ fontFamily: 'SN Pro, sans-serif' }}>94</div>
-                                                <div className="text-xs text-gray-400 font-medium">/100</div>
+                                                <div className="text-2xl md:text-3xl font-bold text-gray-900" style={{ fontFamily: 'SN Pro, sans-serif' }}>94</div>
+                                                <div className="text-[10px] md:text-xs text-gray-400 font-medium">/100</div>
                                             </div>
                                         </div>
                                     </div>
