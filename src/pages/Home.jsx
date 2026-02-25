@@ -9,7 +9,6 @@ const Home = () => {
     const [activeTab, setActiveTab] = React.useState('signals');
     const [textIndex, setTextIndex] = React.useState(0);
     const [isVisible, setIsVisible] = React.useState(true);
-    const [isAutoPilotEnabled, setIsAutoPilotEnabled] = React.useState(true);
     const [isAfterOutmate, setIsAfterOutmate] = React.useState(true);
 
     const rotatingTexts = [
@@ -142,97 +141,58 @@ const Home = () => {
                                     Modern GTM stacks promise automation, but most teams end up with more tools, more complexity, and more manual work.
                                 </p>
 
-                                {/* Toggle Button */}
-                                <div className="flex items-center gap-4 mb-10">
-                                    <div className="flex bg-gray-100 p-1 rounded-xl border border-gray-200 shadow-inner">
-                                        <button
-                                            onClick={() => setIsAutoPilotEnabled(false)}
-                                            className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${!isAutoPilotEnabled ? 'bg-white text-gray-900 shadow-md transform scale-105' : 'text-gray-400 hover:text-gray-600'}`}
-                                        >
-                                            Manual
-                                        </button>
-                                        <button
-                                            onClick={() => setIsAutoPilotEnabled(true)}
-                                            className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${isAutoPilotEnabled ? 'bg-purple-600 text-white shadow-lg transform scale-105 shadow-purple-200' : 'text-gray-400 hover:text-gray-600'}`}
-                                        >
-                                            Autopilot
-                                        </button>
-                                    </div>
-                                    <div className="text-sm font-medium text-gray-400 animate-pulse">
-                                        {isAutoPilotEnabled ? 'Agentic GTM Active' : 'Inefficient Process'}
-                                    </div>
-                                </div>
-
                                 <Link to="/book-demo" className="bg-black text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-gray-800 transition-all inline-flex items-center gap-2" target="_blank" rel="noopener noreferrer">
                                     Book a demo
                                     <ArrowRight size={20} />
                                 </Link>
                             </div>
 
-                            {/* Right Content - Conditional Rendering */}
+                            {/* Right Content - Scrollable Pain Points */}
                             <div className="relative h-[500px] sm:h-[600px] md:h-[700px] flex items-center justify-center lg:justify-end overflow-hidden">
-                                {isAutoPilotEnabled ? (
-                                    /* Scrollable Container (Auto Mode) */
-                                    <div className="h-full w-full overflow-y-auto pr-2 space-y-4 md:space-y-6 custom-scrollbar pb-20 fade-in">
-                                        {[
-                                            {
-                                                title: "Clay feels powerful, but the learning curve is brutal",
-                                                desc: "You shouldn't need a PhD in automation to find a lead. Outmate is built for sales people, not engineers. Get up and running in minutes, not days."
-                                            },
-                                            {
-                                                title: "Your GTM stack is getting expensive fast",
-                                                desc: "Between LinkedIn Premium, enrichment tools, and outreach platforms, you're paying thousands. Outmate consolidates your stack at a fraction of the cost."
-                                            },
-                                            {
-                                                title: "You’re managing too many tools",
-                                                desc: "Data in one place, sequences in another, CRM in a third. Outmate brings your entire GTM process into one unified intelligence layer."
-                                            },
-                                            {
-                                                title: "AI workflows feel fragile",
-                                                desc: "Prompts break, data maps fail, and bots hallucinate. Outmate’s agentic engine is built for reliability, with human-in-the-loop triggers where they matter most."
-                                            },
-                                            {
-                                                title: "Personalization still feels manual",
-                                                desc: "Copy-pasting 'I saw your post about X' isn't personalization. Outmate uses deep signals to write messages that actually sound human and get replies."
-                                            },
-                                            {
-                                                title: "You don’t trust your data",
-                                                desc: "Bounced emails and wrong phone numbers kill deliverability. We multi-source and verify every data point in real-time before you ever hit send."
-                                            }
-                                        ].map((card, index) => (
-                                            <div
-                                                key={index}
-                                                className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100 sticky transform transition-all hover:scale-[1.01]"
-                                                style={{
-                                                    top: `${index * (window.innerWidth < 768 ? 10 : 20)}px`,
-                                                    marginBottom: '40px',
-                                                    zIndex: index + 1
-                                                }}
-                                            >
-                                                <div className="text-purple-600 font-bold mb-2">0{index + 1}</div>
-                                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'SN Pro, sans-serif' }}>{card.title}</h3>
-                                                <p className="text-gray-500 leading-relaxed" style={{ fontFamily: 'Calibri, sans-serif' }}>
-                                                    {card.desc}
-                                                </p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                ) : (
-                                    /* Manual Workflow Image (Manual Mode) */
-                                    <div className="relative w-full h-full flex items-center justify-center p-4 fade-in">
-                                        <div className="absolute inset-0 bg-purple-100/20 blur-3xl rounded-full -z-10"></div>
-                                        <div className="bg-gray-900 rounded-3xl p-6 shadow-2xl border border-gray-800 transform rotate-1 hover:rotate-0 transition-all duration-700">
-                                            <img
-                                                src={manualWorkflowImg}
-                                                alt="Manual GTM Workflow Complexity"
-                                                className="w-full h-auto rounded-xl opacity-90"
-                                            />
-                                            <div className="absolute -top-4 -right-4 bg-red-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg shadow-red-200">
-                                                MANUAL CHAOS
-                                            </div>
+                                <div className="h-full w-full overflow-y-auto pr-2 space-y-4 md:space-y-6 custom-scrollbar pb-20 fade-in">
+                                    {[
+                                        {
+                                            title: "Clay feels powerful, but the learning curve is brutal",
+                                            desc: "You shouldn't need a PhD in automation to find a lead. Outmate is built for sales people, not engineers. Get up and running in minutes, not days."
+                                        },
+                                        {
+                                            title: "Your GTM stack is getting expensive fast",
+                                            desc: "Between LinkedIn Premium, enrichment tools, and outreach platforms, you're paying thousands. Outmate consolidates your stack at a fraction of the cost."
+                                        },
+                                        {
+                                            title: "You’re managing too many tools",
+                                            desc: "Data in one place, sequences in another, CRM in a third. Outmate brings your entire GTM process into one unified intelligence layer."
+                                        },
+                                        {
+                                            title: "AI workflows feel fragile",
+                                            desc: "Prompts break, data maps fail, and bots hallucinate. Outmate’s agentic engine is built for reliability, with human-in-the-loop triggers where they matter most."
+                                        },
+                                        {
+                                            title: "Personalization still feels manual",
+                                            desc: "Copy-pasting 'I saw your post about X' isn't personalization. Outmate uses deep signals to write messages that actually sound human and get replies."
+                                        },
+                                        {
+                                            title: "You don’t trust your data",
+                                            desc: "Bounced emails and wrong phone numbers kill deliverability. We multi-source and verify every data point in real-time before you ever hit send."
+                                        }
+                                    ].map((card, index) => (
+                                        <div
+                                            key={index}
+                                            className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100 sticky transform transition-all hover:scale-[1.01]"
+                                            style={{
+                                                top: `${index * (window.innerWidth < 768 ? 10 : 20)}px`,
+                                                marginBottom: '40px',
+                                                zIndex: index + 1
+                                            }}
+                                        >
+                                            <div className="text-purple-600 font-bold mb-2">0{index + 1}</div>
+                                            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'SN Pro, sans-serif' }}>{card.title}</h3>
+                                            <p className="text-gray-500 leading-relaxed" style={{ fontFamily: 'Calibri, sans-serif' }}>
+                                                {card.desc}
+                                            </p>
                                         </div>
-                                    </div>
-                                )}
+                                    ))}
+                                </div>
                                 <style jsx>{`
                                     .fade-in {
                                         animation: fadeIn 0.5s ease-out;
