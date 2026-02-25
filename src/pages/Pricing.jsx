@@ -26,7 +26,7 @@ const Pricing = () => {
                                 </div>
 
                                 {/* Removed italic from pricing and ensured nowrap */}
-                                <h1 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                <h1 className="text-4xl md:text-7xl font-serif font-medium mb-6 text-gray-900 leading-tight">
                                     Flexible, risk-free <span className="text-purple-600">pricing</span>
                                 </h1>
 
