@@ -60,9 +60,9 @@ const Home = () => {
                             <span className="text-xs font-medium text-gray-600 uppercase tracking-wide">Built for Modern B2B & GTM teams</span>
                         </div>
 
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[100px] font-bold tracking-tight text-gray-900 mb-8 leading-[1.1] min-h-[1.2em]" style={{ fontFamily: 'SN Pro, sans-serif' }}>
+                        <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[100px] font-bold tracking-tight text-gray-900 mb-6 sm:mb-8 leading-[1.1] min-h-[1.5em] md:min-h-[1.2em]" style={{ fontFamily: 'SN Pro, sans-serif' }}>
                             Find and qualify leads for<br />
-                            <span className={`inline-block transition-all duration-500 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} text-purple-600 italic`}>
+                            <span className={`inline-block transition-all duration-500 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} text-purple-600 italic break-words`}>
                                 {rotatingTexts[textIndex]}
                             </span>
                         </h1>
@@ -364,33 +364,33 @@ const Home = () => {
                         </p>
 
                         {/* Before/After Toggle */}
-                        <div className="flex items-center justify-center gap-6 mb-16">
-                            <span className={`text-2xl font-medium transition-colors duration-300 ${!isAfterOutmate ? 'text-gray-900' : 'text-gray-400'}`} style={{ fontFamily: 'SN Pro, sans-serif' }}>
+                        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-12 sm:mb-16">
+                            <span className={`text-base sm:text-xl md:text-2xl font-medium transition-colors duration-300 ${!isAfterOutmate ? 'text-gray-900' : 'text-gray-400'}`} style={{ fontFamily: 'SN Pro, sans-serif' }}>
                                 Before Outmate
                             </span>
 
                             <button
                                 onClick={() => setIsAfterOutmate(!isAfterOutmate)}
-                                className={`relative w-24 h-12 rounded-full transition-all duration-500 flex items-center p-1.5 ${isAfterOutmate ? 'bg-purple-300' : 'bg-gray-200'}`}
+                                className={`relative w-20 h-10 sm:w-24 sm:h-12 rounded-full transition-all duration-500 flex items-center p-1 sm:p-1.5 ${isAfterOutmate ? 'bg-purple-300' : 'bg-gray-200'}`}
                             >
                                 <div
-                                    className={`absolute w-9 h-9 bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-500 transform ${isAfterOutmate ? 'translate-x-12' : 'translate-x-0'}`}
+                                    className={`absolute w-8 h-8 sm:w-9 sm:h-9 bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-500 transform ${isAfterOutmate ? 'translate-x-10 sm:translate-x-12' : 'translate-x-0'}`}
                                 >
                                     {isAfterOutmate ? (
-                                        <Check size={20} className="text-purple-600 font-bold" />
+                                        <Check size={18} className="text-purple-600 font-bold sm:size-20" />
                                     ) : (
-                                        <X size={20} className="text-gray-400 font-bold" />
+                                        <X size={18} className="text-gray-400 font-bold sm:size-20" />
                                     )}
                                 </div>
                             </button>
 
-                            <span className={`text-2xl font-medium transition-colors duration-300 ${isAfterOutmate ? 'text-gray-900' : 'text-gray-400'}`} style={{ fontFamily: 'SN Pro, sans-serif' }}>
+                            <span className={`text-base sm:text-xl md:text-2xl font-medium transition-colors duration-300 ${isAfterOutmate ? 'text-gray-900' : 'text-gray-400'}`} style={{ fontFamily: 'SN Pro, sans-serif' }}>
                                 After Outmate
                             </span>
                         </div>
 
                         {/* Integration Visual */}
-                        <div className="relative max-w-5xl mx-auto flex items-center justify-center p-4 min-h-[400px]">
+                        <div className="relative max-w-5xl mx-auto flex items-center justify-center p-2 sm:p-4 min-h-[300px] md:min-h-[400px]">
                             {isAfterOutmate ? (
                                 <img
                                     src="/links.png"
@@ -398,13 +398,13 @@ const Home = () => {
                                     className="w-full h-auto max-w-[900px] object-contain transition-all duration-700 fade-in"
                                 />
                             ) : (
-                                <div className="bg-gray-900 rounded-3xl p-6 shadow-2xl border border-gray-800 transition-all duration-700 fade-in max-w-[900px]">
+                                <div className="bg-gray-900 rounded-2xl md:rounded-3xl p-3 sm:p-6 shadow-2xl border border-gray-800 transition-all duration-700 fade-in w-full max-w-[900px] overflow-hidden relative">
                                     <img
                                         src={manualWorkflowImg}
                                         alt="Manual GTM Logic Flow"
-                                        className="w-full h-auto rounded-xl opacity-90"
+                                        className="w-full h-auto rounded-xl opacity-90 scale-[1.02] sm:scale-100"
                                     />
-                                    <div className="absolute top-0 right-4 bg-red-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg shadow-red-200">
+                                    <div className="absolute top-2 right-2 sm:top-4 sm:right-6 bg-red-500 text-white text-[8px] sm:text-[10px] font-bold px-2 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-lg shadow-red-200/20 whitespace-nowrap">
                                         MANUAL CHAOS
                                     </div>
                                 </div>
