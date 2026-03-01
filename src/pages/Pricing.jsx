@@ -10,8 +10,12 @@ const Pricing = () => {
     }, []);
 
     return (
-        <div className="pt-0 pb-24 px-6 md:px-12 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-200/40 via-white to-white min-h-screen">
-            <div className="max-w-[1200px] mx-auto bg-white/50 border border-white/50 relative z-10 backdrop-blur-3xl">
+        <div className="pt-0 pb-24 relative bg-slate-50 overflow-hidden min-h-screen">
+            {/* Smooth Purple Background Spots */}
+            <div className="absolute top-0 left-0 w-[600px] md:w-[800px] h-[800px] bg-purple-500/20 blur-[120px] md:blur-[160px] -translate-x-1/2 pointer-events-none rounded-full z-0"></div>
+            <div className="absolute top-[5%] right-0 w-[500px] md:w-[700px] h-[800px] bg-purple-500/15 blur-[120px] md:blur-[160px] translate-x-1/3 pointer-events-none rounded-full z-0"></div>
+
+            <div className="w-full max-w-[1440px] mx-auto bg-white/70 border-x border-gray-200 shadow-2xl shadow-purple-900/5 relative z-10 backdrop-blur-2xl min-h-screen">
                 <Navbar isContained={true} />
 
                 <main className="pt-24 md:pt-32 px-6 md:px-12 pb-20">
@@ -26,7 +30,7 @@ const Pricing = () => {
                                 </div>
 
                                 {/* Removed italic from pricing and ensured nowrap */}
-                                <h1 className="text-4xl md:text-7xl font-serif font-medium mb-6 text-gray-900 leading-tight">
+                                <h1 className="text-4xl md:text-7xl font-heading font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-indigo-900 mb-6 leading-tight">
                                     Flexible, risk-free <span className="text-purple-600">pricing</span>
                                 </h1>
 

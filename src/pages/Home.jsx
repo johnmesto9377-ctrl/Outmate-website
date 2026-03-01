@@ -33,7 +33,11 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="pt-0 pb-24 px-6 md:px-12 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-purple-200/40 via-white to-white">
+        <div className="pt-0 pb-24 relative bg-slate-50 overflow-hidden min-h-screen">
+            {/* Smooth Purple Background Spots */}
+            <div className="absolute top-0 left-0 w-[600px] md:w-[800px] h-[800px] bg-purple-500/20 blur-[120px] md:blur-[160px] -translate-x-1/2 pointer-events-none rounded-full z-0"></div>
+            <div className="absolute top-[5%] right-0 w-[500px] md:w-[700px] h-[800px] bg-purple-500/15 blur-[120px] md:blur-[160px] translate-x-1/3 pointer-events-none rounded-full z-0"></div>
+
             <style>
                 {`
                 .fade-text {
@@ -48,7 +52,7 @@ const Home = () => {
                 }
                 `}
             </style>
-            <div className="max-w-[1200px] mx-auto bg-white/50 border border-white/50 ring-1 ring-gray-900/5 relative z-10 backdrop-blur-3xl">
+            <div className="w-full max-w-[1440px] mx-auto bg-white/70 border-x border-gray-200 shadow-2xl shadow-purple-900/5 relative z-10 backdrop-blur-2xl min-h-screen">
                 <Navbar isContained={true} />
 
                 {/* Hero Section */}
@@ -59,7 +63,7 @@ const Home = () => {
                             <span className="text-xs font-medium text-gray-600 uppercase tracking-wide">Built for Modern B2B & GTM teams</span>
                         </div>
 
-                        <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[100px] font-bold tracking-tight text-gray-900 mb-6 sm:mb-8 leading-[1.1] min-h-[1.5em] md:min-h-[1.2em]" style={{ fontFamily: 'SN Pro, sans-serif' }}>
+                        <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[100px] font-heading font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-950 to-indigo-900 mb-6 sm:mb-8 leading-[1.1] min-h-[1.5em] md:min-h-[1.2em]">
                             Find and qualify leads for<br />
                             <span className={`inline-block transition-all duration-500 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} text-purple-600 italic break-words`}>
                                 {rotatingTexts[textIndex]}
@@ -108,14 +112,30 @@ const Home = () => {
                         </div>
 
                         {/* Trusted By */}
-                        <div className="mt-20">
-                            <p className="text-sm font-medium text-gray-500 mb-8">Trusted by the best</p>
-                            <div className="flex flex-wrap justify-center items-center gap-12 transition-all duration-500">
-                                <span className="text-2xl font-bold font-sans text-orange-500 flex items-center gap-1"><span className="text-3xl">*</span>zapier</span>
-                                <span className="text-2xl font-bold font-sans text-blue-600 italic">Razorpay</span>
-                                <span className="text-2xl font-bold font-sans text-purple-600 flex items-center gap-1">❄️ loom</span>
-                                <span className="text-2xl font-bold font-sans text-pink-600">pendo</span>
-                                <span className="text-2xl font-bold font-sans text-black flex items-center gap-1"><div className="w-6 h-6 bg-black rounded-sm"></div> INTERCOM</span>
+                        <div className="mt-20 overflow-hidden relative w-full group">
+                            <p className="text-sm font-medium text-gray-500 mb-8 w-full text-center">Trusted by the best</p>
+
+                            {/* Smooth fade gradients on edges */}
+                            <div className="absolute top-10 bottom-0 left-0 w-32 bg-gradient-to-r from-slate-50 to-transparent z-10"></div>
+                            <div className="absolute top-10 bottom-0 right-0 w-32 bg-gradient-to-l from-slate-50 to-transparent z-10"></div>
+
+                            <div className="flex w-[200%] animate-scroll-left hover:[animation-play-state:paused] transition-all duration-500">
+                                {/* First Set */}
+                                <div className="flex w-1/2 justify-around items-center gap-12 px-6">
+                                    <span className="text-2xl font-bold font-sans text-orange-500 flex items-center gap-1"><span className="text-3xl">*</span>zapier</span>
+                                    <span className="text-2xl font-bold font-sans text-blue-600 italic">Razorpay</span>
+                                    <span className="text-2xl font-bold font-sans text-purple-600 flex items-center gap-1">❄️ loom</span>
+                                    <span className="text-2xl font-bold font-sans text-pink-600">pendo</span>
+                                    <span className="text-2xl font-bold font-sans text-black flex items-center gap-1"><div className="w-6 h-6 bg-black rounded-sm"></div> INTERCOM</span>
+                                </div>
+                                {/* Duplicated Set for Seamless Loop */}
+                                <div className="flex w-1/2 justify-around items-center gap-12 px-6">
+                                    <span className="text-2xl font-bold font-sans text-orange-500 flex items-center gap-1"><span className="text-3xl">*</span>zapier</span>
+                                    <span className="text-2xl font-bold font-sans text-blue-600 italic">Razorpay</span>
+                                    <span className="text-2xl font-bold font-sans text-purple-600 flex items-center gap-1">❄️ loom</span>
+                                    <span className="text-2xl font-bold font-sans text-pink-600">pendo</span>
+                                    <span className="text-2xl font-bold font-sans text-black flex items-center gap-1"><div className="w-6 h-6 bg-black rounded-sm"></div> INTERCOM</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -141,9 +161,10 @@ const Home = () => {
                                     Modern GTM stacks promise automation, but most teams end up with more tools, more complexity, and more manual work.
                                 </p>
 
-                                <Link to="/book-demo" className="bg-black text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-gray-800 transition-all inline-flex items-center gap-2" target="_blank" rel="noopener noreferrer">
-                                    Book a demo
-                                    <ArrowRight size={20} />
+                                <Link to="/book-demo" className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-gray-900 to-black text-white px-8 py-3.5 rounded-full text-lg font-bold shadow-lg shadow-purple-900/10 hover:shadow-xl hover:shadow-purple-900/20 transition-all duration-300 overflow-hidden transform hover:-translate-y-0.5 active:translate-y-0" target="_blank" rel="noopener noreferrer">
+                                    <span className="relative z-10">Book a demo</span>
+                                    <ArrowRight size={20} className="relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></div>
                                 </Link>
                             </div>
 

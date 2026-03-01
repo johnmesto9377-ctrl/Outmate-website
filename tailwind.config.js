@@ -28,11 +28,16 @@ export default {
       },
       animation: {
         'glow-pulse': 'glow-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'scroll-left': 'scroll-left 25s linear infinite',
       },
       keyframes: {
         'glow-pulse': {
           '0%, 100%': { opacity: 0.5 },
           '50%': { opacity: 1 },
+        },
+        'scroll-left': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         }
       }
     },
